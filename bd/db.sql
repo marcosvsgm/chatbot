@@ -1,0 +1,19 @@
+CREATE TABLE yr (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL,
+  telefone TEXT NOT NULL
+);
+
+CREATE TABLE perguntas_frequentes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  pergunta TEXT NOT NULL,
+  resposta TEXT NOT NULL
+);
+
+CREATE TABLE conversas (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  usuario_iyrd INTEGER NOT NULL,
+  mensagem TEXT NOT NULL,
+  data_envio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
+);
